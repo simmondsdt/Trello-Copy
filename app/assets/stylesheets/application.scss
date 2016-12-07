@@ -3,3 +3,24 @@
  */
 
 @import 'materialize';
+
+body {
+  z-index: -2;
+  // background-image: url('assets/images/Background.jpg');
+}
+
+.container {
+  z-index: -1;
+  opacity: 80px;
+  border-radius: 25px;
+  padding: 35px;
+  @extend .grey, .darken-1;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.btn {
+  margin: 5px;
+}

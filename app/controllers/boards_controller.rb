@@ -4,9 +4,9 @@ class BoardsController < ApplicationController
   # GET /boards
   # GET /boards.json
   def index
-    @boards = Board.all
+    @boards = current_user.boards
   end
-
+  
   # GET /boards/1
   # GET /boards/1.json
   def show
@@ -24,7 +24,7 @@ class BoardsController < ApplicationController
   # POST /boards
   # POST /boards.json
   def create
-    @board = Board.new(board_params)
+    @board = current_user.boards.new(board_params)
 
     respond_to do |format|
       if @board.save
@@ -64,7 +64,7 @@ class BoardsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_board
-      @board = Board.find(params[:id])
+      @board = current_user.boards.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

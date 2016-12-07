@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'lists/index'
+
+  get 'lists/show'
+
   # Root Route
   root 'boards#index'
 
@@ -6,7 +10,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   # Resource Routes
-  resources :boards
+  resources :boards do
+    resources :lists
+  end
 
   # Custom GET Routes
   # Custom POST Routes
