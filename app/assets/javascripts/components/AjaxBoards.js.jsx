@@ -44,7 +44,6 @@ class AjaxBoards extends React.Component {
       type: 'DELETE',
       dataType: 'JSON',
     }).success( data => {
-      console.log(data);
       // Figure out how to set state and remove board
       let boards = this.state.boards;
       let index = boards.findIndex( b => b.id === id);

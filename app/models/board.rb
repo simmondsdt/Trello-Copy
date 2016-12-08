@@ -3,6 +3,7 @@ class Board < ApplicationRecord
   validates_presence_of :name
   # Associations
   belongs_to :user
+  has_many :lists
   # Callbacks
 
   # Instance Methods
